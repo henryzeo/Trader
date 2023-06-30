@@ -8,6 +8,18 @@ const router = createRouter({
       name: "login",
       component: () => import("../views/login/Login.vue"),
     },
+    {
+      path: "/main",
+      name: "main",
+      component: () => import("../views/main/Main.vue"),
+      children: [
+        {
+          path: "/dashboard",
+          name: "dashboard",
+          component: () => import("../views/main/Dashboard.vue"),
+        },
+      ],
+    },
   ],
 });
 
