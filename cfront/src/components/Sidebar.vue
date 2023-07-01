@@ -132,10 +132,7 @@ const items = [
     margin: 0 5px 1px;
   }
 
-  .el-menu-item {
-    min-width: 80px;
-  }
-
+ 
   li {
     text-align: left;
     .el-tooltip {

@@ -18,6 +18,12 @@ const router = createRouter({
           name: "dashboard",
           component: () => import("../views/main/Dashboard.vue"),
         },
+        {
+          path: "/pwdsetting",
+          name: "PwdSetting",
+          component: () => import("../views/main/PwdSetting.vue"),
+          meta: { requireAuth: true },
+        },
       ],
     },
     {
@@ -30,6 +36,21 @@ const router = createRouter({
       component: () => import("../views/error/404.vue"),
     },
   ],
+});
+
+// 路由拦截器
+router.beforeEach((to, from, next) => {
+  if (to.meta.requireAuth) {
+    if (Boolean(sessionStorage.getItem("uid"))) {
+      next();
+    } else {
+      next({
+        path: "/",
+      });
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;
