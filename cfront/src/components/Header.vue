@@ -1,27 +1,18 @@
 <script setup>
 import { ref } from "vue";
+import { useSidebarStore } from "@/store/sidebar";
+
 const username = ref("hzeo");
-let isCollapse = ref(true);
-const collapseChange = () => {
-  isCollapse.value = !isCollapse.value;
-};
+const sidebar = useSidebarStore();
 </script>
 
 <template>
   <div class="header">
-    <div class="collapse-btn" @click="collapseChange">
-      <el-icon
-        v-if="isCollapse"
-        style="vertical-align: middle; margin-bottom: 4px"
-        :size="24"
-        ><Fold
-      /></el-icon>
-      <el-icon
-        v-else
-        style="vertical-align: middle; margin-bottom: 4px"
-        :size="24"
-        ><Expand
-      /></el-icon>
+    <div class="collapse-btn" @click="sidebar.handleCollapse()">
+      <el-icon style="vertical-align: middle; margin-bottom: 4px" :size="24">
+        <el-icon-fold v-if="sidebar.collapse"></el-icon-fold>
+        <el-icon-expand v-else> </el-icon-expand>
+      </el-icon>
     </div>
 
     <div class="logo">证券交易系统</div>
