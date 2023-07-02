@@ -20,8 +20,10 @@ const changeTableSort = (column) => {
   } else {
     tableData = tableData.sort((a, b) => a[column.prop] - b[column.prop]);
   }
-  pagination.curPage = 2;
-  pagination.curPage = 1;
+  // fix sort 无法正常显示问题
+  const temp = pagination.curPage;
+  pagination.curPage = 0;
+  pagination.curPage = temp;
 };
 </script>
 
