@@ -30,6 +30,12 @@ const router = createRouter({
           component: () => import("../views/main/Transfer.vue"),
           // meta: { requireAuth: true },
         },
+        {
+          path: "/transferquery",
+          name: "TransferQuery",
+          component: () => import("../views/main/TransferQuery.vue"),
+          // meta: { requireAuth: true },
+        },
       ],
     },
     {
