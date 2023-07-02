@@ -37,20 +37,47 @@ const pageCount = dataCount ? Math.ceil(dataCount / 10) : 1;
           empty-text="暂无数据"
           border
         >
-          <el-table-column prop="date" label="日期" />
-          <el-table-column prop="time" label="时间" />
-          <el-table-column prop="type" label="业务类别" />
-          <el-table-column prop="moneyType" label="币种" />
-          <el-table-column prop="money" label="金额" />
+          <el-table-column
+            prop="date"
+            label="日期"
+            align="center"
+            sortable
+            :sort-orders="['ascending', 'descending']"
+          />
+          <el-table-column
+            prop="time"
+            label="时间"
+            align="center"
+            sortable
+            :sort-orders="['ascending', 'descending']"
+          />
+          <el-table-column
+            prop="type"
+            label="业务类别"
+            align="center"
+            sortable
+            :sort-orders="['ascending', 'descending']"
+          />
+          <el-table-column
+            prop="moneyType"
+            label="币种"
+            align="center"
+            sortable
+            :sort-orders="['ascending', 'descending']"
+          />
+          <el-table-column
+            prop="money"
+            label="金额"
+            align="center"
+            sortable
+            :sort-orders="['ascending', 'descending']"
+          />
         </el-table>
       </div>
       <div class="bottom">
-        <div style="align-items: center; margin: 4px 10px 0 0">
-          共 {{ dataCount }} 条
-        </div>
         <el-pagination
           background
-          layout="prev, pager, next"
+          layout="total, prev, pager, next"
           :total="dataCount"
           :page-count="pageCount"
         />

@@ -34,48 +34,50 @@ const curMoneyType = ref(1);
 
     <el-card shadow="hover" style="margin-top: 5px">
       <div class="_form">
-        <el-form :model="transfer" label-width="450" style="max-width: 650px">
-          <el-form-item label="转账方式">
-            <el-select v-model="curType">
-              <el-option
-                v-for="item in transfer.type"
-                :key="item.id"
-                :label="item.name"
-                :value="item.id"
-              ></el-option>
-            </el-select>
-          </el-form-item>
-          <el-form-item label="选择银行">
-            <el-select v-model="curBank">
-              <el-option
-                v-for="item in transfer.bank"
-                :key="item.id"
-                :label="item.name"
-                :value="item.id"
-              ></el-option>
-            </el-select>
-          </el-form-item>
-          <el-form-item label="银行密码">
-            <el-input
-              :type="'password'"
-              clearable
-              v-model="transfer.password"
-            />
-          </el-form-item>
-          <el-form-item label="选择币种">
-            <el-select v-model="curMoneyType">
-              <el-option
-                v-for="item in transfer.moneyType"
-                :key="item.id"
-                :label="item.name"
-                :value="item.id"
-              ></el-option>
-            </el-select>
-          </el-form-item>
-          <el-form-item label="金额">
-            <el-input clearable v-model="transfer.money" />
-          </el-form-item>
-        </el-form>
+        <el-row justify="center">
+          <el-form :model="transfer" label-width="80">
+            <el-form-item label="转账方式">
+              <el-select v-model="curType">
+                <el-option
+                  v-for="item in transfer.type"
+                  :key="item.id"
+                  :label="item.name"
+                  :value="item.id"
+                ></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item label="选择银行">
+              <el-select v-model="curBank">
+                <el-option
+                  v-for="item in transfer.bank"
+                  :key="item.id"
+                  :label="item.name"
+                  :value="item.id"
+                ></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item label="银行密码">
+              <el-input
+                :type="'password'"
+                clearable
+                v-model="transfer.password"
+              />
+            </el-form-item>
+            <el-form-item label="选择币种">
+              <el-select v-model="curMoneyType">
+                <el-option
+                  v-for="item in transfer.moneyType"
+                  :key="item.id"
+                  :label="item.name"
+                  :value="item.id"
+                ></el-option>
+              </el-select>
+            </el-form-item>
+            <el-form-item label="金额">
+              <el-input clearable v-model="transfer.money" />
+            </el-form-item>
+          </el-form>
+        </el-row>
       </div>
 
       <el-row justify="center">
