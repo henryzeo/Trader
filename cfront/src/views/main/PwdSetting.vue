@@ -49,9 +49,7 @@ const ruleForm = reactive({
             />
           </el-form-item>
           <el-form-item>
-            <el-button size="small" type="primary" @click="submitForm(ruleForm)"
-              >确认修改</el-button
-            >
+            <el-button size="small" type="primary">确认修改</el-button>
           </el-form-item>
         </el-form>
       </el-row>
