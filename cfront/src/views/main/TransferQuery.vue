@@ -8,6 +8,9 @@ const defaultTime =
   [new Date(2000, 1, 1, 0, 0, 0), new Date(2000, 2, 1, 23, 59, 59)];
 
 const tableData = [];
+
+const dataCount = 0;
+const pageCount = dataCount ? Math.ceil(dataCount / 10) : 1;
 </script>
 
 <template>
@@ -46,9 +49,25 @@ const tableData = [];
           <el-table-column prop="money" label="金额" />
         </el-table>
       </div>
-      <div class="bottom"></div>
+      <div class="bottom">
+        <div style="align-items: center; margin: 4px 10px 0 0">
+          共 {{ dataCount }} 条
+        </div>
+        <el-pagination
+          background
+          layout="prev, pager, next"
+          :total="dataCount"
+          :page-count="pageCount"
+        />
+      </div>
     </el-card>
   </div>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.bottom {
+  display: flex;
+  float: right;
+  padding: 10px;
+}
+</style>

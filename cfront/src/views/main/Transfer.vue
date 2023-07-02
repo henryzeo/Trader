@@ -1,6 +1,6 @@
 <script setup>
-import { ref } from "vue";
-const transfer = {
+import { ref, reactive } from "vue";
+const transfer = reactive({
   type: [
     { id: 1, name: "银行转证券（转入）" },
     { id: 2, name: "银行转证券（转出）" },
@@ -15,7 +15,7 @@ const transfer = {
     { id: 2, name: "美元 " },
   ],
   money: 0,
-};
+});
 const curType = ref(1);
 const curBank = ref(1);
 const curMoneyType = ref(1);
@@ -36,6 +36,7 @@ const curMoneyType = ref(1);
       <div class="_form">
         <el-form
           :label-position="labelPosition"
+          :model="transfer"
           label-width="450"
           style="max-width: 650px"
         >
@@ -60,7 +61,11 @@ const curMoneyType = ref(1);
             </el-select>
           </el-form-item>
           <el-form-item label="银行密码">
-            <el-input :type="'password'" v-model="transfer.password" />
+            <el-input
+              :type="'password'"
+              clearable
+              v-model="transfer.password"
+            />
           </el-form-item>
           <el-form-item label="选择币种">
             <el-select v-model="curMoneyType">
@@ -73,7 +78,7 @@ const curMoneyType = ref(1);
             </el-select>
           </el-form-item>
           <el-form-item label="金额">
-            <el-input v-model="transfer.money" />
+            <el-input clearable v-model="transfer.money" />
           </el-form-item>
         </el-form>
       </div>

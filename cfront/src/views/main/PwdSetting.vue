@@ -30,6 +30,7 @@ const ruleForm = reactive({
               type="password"
               autocomplete="off"
               show-password
+              clearable
             />
           </el-form-item>
           <el-form-item label="新密码" prop="newpass">
@@ -38,6 +39,7 @@ const ruleForm = reactive({
               type="password"
               autocomplete="off"
               show-password
+              clearable
             />
           </el-form-item>
           <el-form-item label="确认密码" prop="checkPass">
@@ -46,6 +48,7 @@ const ruleForm = reactive({
               type="password"
               autocomplete="off"
               show-password
+              clearable
             />
           </el-form-item>
           <el-form-item>
