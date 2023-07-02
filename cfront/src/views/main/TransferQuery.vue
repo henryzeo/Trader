@@ -2,10 +2,6 @@
 import { ref } from "vue";
 
 const value = ref("");
-const defaultTime =
-  ref <
-  [Date, Date] >
-  [new Date(2000, 1, 1, 0, 0, 0), new Date(2000, 2, 1, 23, 59, 59)];
 
 const tableData = [];
 
@@ -31,7 +27,6 @@ const pageCount = dataCount ? Math.ceil(dataCount / 10) : 1;
           type="daterange"
           start-placeholder="开始时间"
           end-placeholder="结束时间"
-          :default-time="defaultTime"
         />
         <el-button style="margin: 0 5px 5px 5px" type="primary">查询</el-button>
       </div>

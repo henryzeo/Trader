@@ -34,12 +34,7 @@ const curMoneyType = ref(1);
 
     <el-card shadow="hover" style="margin-top: 5px">
       <div class="_form">
-        <el-form
-          :label-position="labelPosition"
-          :model="transfer"
-          label-width="450"
-          style="max-width: 650px"
-        >
+        <el-form :model="transfer" label-width="450" style="max-width: 650px">
           <el-form-item label="转账方式">
             <el-select v-model="curType">
               <el-option
